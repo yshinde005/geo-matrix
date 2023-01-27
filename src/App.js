@@ -74,10 +74,12 @@ return <div>
   Map<Marker position={center} />
   {directionsResponse && <DirectionsRenderer directions={directionsResponse} />}
   </GoogleMap>
-    
+  <span className='origin'>Origin: </span>
 <Autocomplete>
+      
       <input type="text" placeholder="Origin" ref={originRef}></input>
       </Autocomplete>
+      <span className='destination'>Destination:</span>
       <Autocomplete>
       <input type="text" placeholder="Destination" ref={destiantionRef}></input>
       
