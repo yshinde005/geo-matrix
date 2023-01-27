@@ -1,47 +1,244 @@
-.navbar{
-position: absolute;
-width: 100%;
-height: 80px;
-left: 0px;
-right: 0px;
-top: 0px;
+.navbar {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
 
-background: #FFFFFF;
+  background: #ffffff;
 }
 
-.title{
+.title {
   width: 560px;
-height: 24px;
+  height: 24px;
 
-/* LG / subtitle */
+  /* LG / subtitle */
 
-font-family: 'Work Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 120%;
-/* identical to box height, or 24px */
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  /* identical to box height, or 24px */
 
-text-align: center;
+  text-align: center;
 
-/* $brandColorPrimary */
+  /* $brandColorPrimary */
 
-color: #1B31A8;
+  color: #1b31a8;
 
+  /* Inside auto layout */
 
-/* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-between;
+  margin-top: 80px;
+  background-color: #f4f8fa;
+}
+.parent-container {
+  background-color: #f4f8fa;
+}
+.title {
+  width: 560px;
+  height: 24px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  text-align: center;
+  color: #1b31a8;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  margin-left: 70vh;
+  padding-top: 30px;
+}
+.origin {
+  position: absolute;
+  width: 111px;
+  height: 22px;
+  left: 159px;
+  top: 170px;
 
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  /* or 17px */
+
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+.destination {
+  position: absolute;
+  width: 111px;
+  height: 22px;
+  left: 162px;
+  top: 392px;
+
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  /* or 17px */
+
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+.form-container {
+  height: 820px;
+  width: 158px;
+  display: flex;
+}
+.calc-btn {
+  position: absolute;
+  border: 0;
+  width: 141px;
+  height: 62px;
+  left: 505px;
+  top: 262px;
+  background: #1b31a8;
+  border-radius: 32px;
+  color: white;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  /* identical to box height, or 111% */
+
+  text-align: center;
+
+  /* $neutralWhite */
+
+  color: #ffffff;
+  transition: ease-in-out 0.2s;
+}
+.calc-btn:hover {
+  background: #344cd7;
+  color: white;
+  cursor: pointer;
+}
+.i-origin {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 250px;
+  height: 45px;
+  left: 156px;
+  top: 195px;
+
+  background: #ffffff;
+  border: 1px solid #dcddec;
+  border-radius: 6px;
+}
+.logo {
+  position: absolute;
+  width: 160px;
+  height: 69px;
+  left: 67px;
+  top: 6px;
+}
+.i-destination {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 250px;
+  height: 45px;
+  left: 159px;
+  top: 417px;
+
+  background: #ffffff;
+  border: 1px solid #dcddec;
+  border-radius: 6px;
+}
+.map-container {
+  position: absolute;
+  height: 560px;
+  width: 600px;
+  left: 1000px;
+  bottom: 102px;
+  right: 104px;
+  top: 150px;
+}
+.card {
+  width: 550px;
+  height: 24px;
+  left: 9%;
+  top: 70%;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  border-radius: 8%;
+  /* identical to box height, or 24px */
+  position: absolute;
+  align-items: center;
+
+  color: #1e2a32;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
 }
 
-.map-container{
-  position: relative;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-  margin-left: 1000px;
+.distance {
+  width: 85%;
+  height: 36px;
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 120%;
+  /* identical to box height, or 36px */
+  background-color: #ffffff;
+
+  /* $brandColorSecondary */
+  justify-content: left;
+  color: #1e2a32;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.kms {
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  flex-wrap: nowrap;
+  font-family: "monospace";
+  font-size: 25px;
+  text-align: right;
+  margin-left: 230px;
+  color: #0079ff;
 }

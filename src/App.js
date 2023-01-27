@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./App.css";
 import { GoogleMap, useJsApiLoader, Marker, Autocomplete, DirectionsRenderer } from "@react-google-maps/api";
-
+import logo from './img/logo.jpg'
 
 const center = { lat:19.0760, lng: 72.8777 };
 
@@ -58,37 +58,38 @@ async function calculateRoute(){
   
 }
 
-function clearRoute(){
-  setDirectionsResponse(null)
-  setDistance('')
-  originRef.current.value = ''
-  destiantionRef.current.value = ''
-}
 
 
-return <div>
-  <div className="navbar"></div>
 
+return <div className="parent-container">
+  <div className="navbar">
+    <img className="logo" src={logo} alt="logo"/>
+  </div>
+<div className="container">
   <p className="title">Let's calculate <strong>distance</strong> from Google maps</p>
+  <div className="map-container">
   <GoogleMap center={center} zoom={10} mapContainerStyle={{width:'550px', height:'511px'}}>
   Map<Marker position={center} />
   {directionsResponse && <DirectionsRenderer directions={directionsResponse} />}
   </GoogleMap>
+  </div>
+  <div className="form-container">
   <span className='origin'>Origin: </span>
 <Autocomplete>
       
-      <input type="text" placeholder="Origin" ref={originRef}></input>
+      <input type="text" placeholder="Origin" className="i-origin" ref={originRef}></input>
       </Autocomplete>
       <span className='destination'>Destination:</span>
       <Autocomplete>
-      <input type="text" placeholder="Destination" ref={destiantionRef}></input>
+      <input type="text" placeholder="Destination" className="i-destination" ref={destiantionRef}></input>
       
       </Autocomplete>
-      <button type="submit" onClick={calculateRoute}>Calculate</button>
-      <button type="submit" onClick={clearRoute}>Clear</button>
+      <button type="submit" className="calc-btn" onClick={calculateRoute}>Calculate</button>
+
       <div className="card">
-      <text>Distance:{distance}</text>
-      
+        <text className="distance">Distance: <div className="kms">{distance} </div></text>
+      </div>
+      </div>
       </div>
 
 </div>
